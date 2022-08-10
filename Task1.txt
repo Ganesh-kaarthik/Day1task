@@ -1,0 +1,115 @@
+                                     Task-1 
+
+     1. differnce between HTTP1.1 vs HTTP2.
+
+        Differnces:
+
+                  * HTTP1.1 loads resources one after the other, so if one resource cannot be loaded,it blocks 
+                    all the other resources behind it.
+                    HTTP2 is able to use a single TCP connection to send multiple streams of data at once so 
+                    that no resource blocks any other resource.
+
+                  * HTTP1.1 relies on the transport layer to avoid buffer overflow, each new TCP connection 
+                    requires a separate flow control mechanism.
+                    HTTP2 solves this problem by allowing the client and server to implement their own flow 
+                    controls, rather than relying on the transport layer. The application layer communicates
+                    the available buffer space, allowing the client and server to set the receive window on 
+                    the level of the multiplexed streams.
+                    
+                  * In HTTP1.1, if the developer knows in advance which additional resources the client 
+                    machine will need to render the page, they can use a technique called resource inlining
+                    to include the required resource directly within the HTML document that the server sends
+                    in response to the initial GET request.
+                    HTTP2 enables multiple concurrent responses to a clients initial GET request, a server
+                    can send a resource to a client along with the requested HTML page, providing the resource
+                    before the client asks for it. This process is called server push. In this way, an HTTP2
+                    connection can accomplish the same goal ofresource inlining while maintaining the separation
+                    between the pushed resource and the document.
+                                             
+                  * HTTP1.1 uses formats like gzip to compress the data transferred in the messages. However,
+                    the header component of the message is always sent as plain text. Though the header itself
+                    is small, it gets larger due to the use of cookies or an increased number of requests.
+                    HTTP2 uses HPACK compression to decrease the average size of the header. This compression
+                    program reduces its size as a result.In addition, HPACK keeps track of previously transferred
+                    header values and  further compresses them as per a dynamically modified index shared between
+                    client and server.
+
+               
+                  * HTTP1.1 used to process text commands to complete request-response cycles. 
+                    HTTP2 will use binary commands to execute the same tasks. This attribute
+                    eases complications with framing and simplifies implementation of commands that were
+                    confusingly intermixed due to commands containing text and optional spaces.
+
+
+     ------------------------------------------------------------------------------------------------------------------------
+
+
+      2. objects ands its internal representations in javascript.
+
+              Objects are important data types in JavaScript. Objects are different than primitive data 
+              types (i.e. number, string, boolean, etc.). Primitive data types contain one value but 
+              Objects can hold many values in form of Key: value pair. These keys can be variables or 
+              functions and are called properties and methods, respectively, in the context of an object.
+              Every object has some property associated with some value. These values can be accessed using 
+              these properties associated with them.An object can be created with figure brackets {} with 
+              an optional list of properties. A property is a “key: value” pair, where a key is the property
+              name value can be anything.
+
+
+              EXAMPLE:
+                   
+                 firstname = ganesh,lastname = kaarthik, age = 21, height = 165 CM.
+
+              SYNTAX:
+                 const person = {
+                  
+                  firstName : "Ganesh",
+
+                  lastName : "KAARTHIK",
+
+                  age : 21,
+
+                  height : "165 CM"
+
+                };
+
+                
+
+
+
+
+
+
+
+
+
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
